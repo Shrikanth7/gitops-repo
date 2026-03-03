@@ -9,4 +9,5 @@ helmCharts:
     version: 56.21.2
     releaseName: prometheus
     namespace: monitoring
+    includeCRDs: true
     valuesFile: prometheus-values.yaml

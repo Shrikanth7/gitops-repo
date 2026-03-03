@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: infrastructure-dev
+  name: prometheus-dev
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/Shrikanth7/gitops-repo.git' # Update this!
+    repoURL: 'https://github.com/Shrikanth7/gitops-repo.git'
     targetRevision: HEAD
-    path: infrastructure/overlays/dev
+    path: infrastructure/overlays/dev/prometheus # Notice the path now points specifically to the prometheus subfolder
   destination:
     server: 'https://kubernetes.default.svc'
   syncPolicy:
@@ -17,4 +17,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-      - ServerSideApply=true # Crucial: Prometheus CRDs are too large for standard apply
+      - ServerSideApply=true

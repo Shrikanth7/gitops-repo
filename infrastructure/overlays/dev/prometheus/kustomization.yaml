@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../base/prometheus
+  - ../../../base/prometheus
 
 helmCharts:
   - name: kube-prometheus-stack
@@ -9,4 +9,4 @@ helmCharts:
     version: 56.21.2
     releaseName: prometheus
     namespace: monitoring
-    valuesFile: prometheus-values.yaml # This applies your Dev-specific overrides
+    valuesFile: prometheus-values.yaml

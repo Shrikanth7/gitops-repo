@@ -1,0 +1,4 @@
+grafana:
+  adminPassword: "admin"
+  ingress:
+    enabled: false

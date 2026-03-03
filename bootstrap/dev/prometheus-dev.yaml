@@ -11,6 +11,7 @@ spec:
     path: infrastructure/overlays/dev/prometheus # Notice the path now points specifically to the prometheus subfolder
   destination:
     server: 'https://kubernetes.default.svc'
+    namespace: monitoring
   syncPolicy:
     automated:
       prune: true
